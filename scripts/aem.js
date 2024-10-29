@@ -157,7 +157,7 @@ function init() {
  * @param {string} name The unsanitized string
  * @returns {string} The class name
  */
-function toClassName(name) {
+export function toClassName(name) {
   return typeof name === 'string'
     ? name
       .toLowerCase()
@@ -172,7 +172,7 @@ function toClassName(name) {
  * @param {string} name The unsanitized string
  * @returns {string} The camelCased name
  */
-function toCamelCase(name) {
+export function toCamelCase(name) {
   return toClassName(name).replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 }
 
@@ -182,7 +182,7 @@ function toCamelCase(name) {
  * @returns {object} The block config
  */
 // eslint-disable-next-line import/prefer-default-export
-function readBlockConfig(block) {
+export function readBlockConfig(block) {
   const config = {};
   block.querySelectorAll(':scope > div').forEach((row) => {
     if (row.children) {
